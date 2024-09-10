@@ -85,3 +85,25 @@ In this step, we will compare the performance of different iterations of the mod
 ## Iteration 10: Final Evaluation and Conclusion
 
 Finally, we will summarize the results of the lab and evaluate the best-performing model. By comparing the confusion matrices, precision, recall, and F1-scores for positive, neutral, and negative classes, we will draw conclusions on how effectively the model handles multi-class sentiment classification. This step will also include a discussion on the challenges and insights gained from tuning a pre-trained model for a task involving three sentiment categories.
+
+## Submission
+Once you have completed your analysis and visualizations, push your Jupyter notebook to your forked GitHub repository. Ensure that your final submission includes narratives explaining your visualizations and insights.
+
+
+```bash
+$ git add .
+$ git commit -m "done"
+$ git push origin main
+```
+
+Then create a Pull Request!!
+
+## Additional Resources
+
+- [ ]()
+- [ ]()
+- [ ]()
+- [ ]().
+- [ ]().
+
+![happy_coding](https://user-images.githubusercontent.com/970858/63899010-c23fc480-c9ea-11e9-84a2-542907e42362.png)
