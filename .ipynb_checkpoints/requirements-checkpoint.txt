@@ -1,0 +1,23 @@
+# Basic dependencies
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# Hugging Face transformers and datasets
+transformers
+datasets
+
+# TensorFlow and Keras
+tensorflow
+keras
+
+# Jupyter for running notebooks
+jupyter
+
+# Evaluation metrics
+evaluate
+
+# Optional for handling GPUs
+accelerate
