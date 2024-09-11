@@ -1,23 +1,24 @@
-# Basic dependencies
-pandas
-numpy
-scikit-learn
-matplotlib
-seaborn
-
-# Hugging Face transformers and datasets
+# Transformers: Library from Hugging Face to work with pre-trained models like DistilBERT.
 transformers
+
+# TensorFlow: Framework for building and training deep learning models.
+tensorflow
+
+# Datasets: Hugging Face library to load and preprocess datasets.
 datasets
 
-# TensorFlow and Keras
-tensorflow
-keras
+# Pandas: Data manipulation library for loading, cleaning, and analyzing datasets.
+pandas
 
-# Jupyter for running notebooks
-jupyter
+# Matplotlib: Visualization library for creating plots, graphs, and other visual data representations.
+matplotlib
 
-# Evaluation metrics
-evaluate
+# Seaborn: Statistical data visualization library built on top of Matplotlib, useful for creating advanced visualizations.
+seaborn
 
-# Optional for handling GPUs
-accelerate
+# Scikit-learn: Machine learning library for evaluation metrics (e.g., precision, recall, F1-score), data splitting, and more.
+scikit-learn
+
+# WordCloud: Library to generate word clouds, useful for visualizing the most frequent words in text data.
+wordcloud
+

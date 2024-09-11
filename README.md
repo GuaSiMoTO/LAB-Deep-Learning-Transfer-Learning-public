@@ -70,11 +70,15 @@ After achieving satisfactory performance, save the fine-tuned model and tokenize
 
 ---
 
-## Iteration 8: Final Evaluation and Conclusion
+## Iteration 8: Custom Predictions
 
-In this final step, summarize the results of the lab and evaluate the model’s overall performance. Analyze the confusion matrices, precision, recall, and F1-scores for positive, neutral, and negative classes. Draw conclusions on how effectively the model handles multi-class sentiment classification. Discuss the challenges and insights gained from fine-tuning a pre-trained model for a task involving three sentiment categories.
+In this section, you will test the model with your own comments, rather than the test set data. This gives us an opportunity to see how well the model generalizes to new, unseen data that you can create.
 
----
+You can replace the default comments with your own text, and the model will predict whether each comment expresses a positive, neutral, or negative sentiment. 
+
+This exercise helps us understand how the fine-tuned model behaves when faced with real-world input data and further validates its performance beyond the dataset we trained and tested on.
+
+----
 
 ## Bonus: Handling Class Imbalance
 
