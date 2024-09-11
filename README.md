@@ -30,49 +30,61 @@ In this lab, we will perform sentiment analysis using the **DistilBERT** model, 
 
 ## Iteration 1: Data Load
 
-In the first step of this lab, we will load the dataset containing text samples labeled with three sentiment categories: positive, neutral, and negative. Using `pandas`, we’ll load the `Train.csv` and `Test.csv` datasets into DataFrames. Since this dataset has an extra class (neutral), it’s important to inspect the distribution of these three categories to understand how balanced the data is. Displaying a few rows of the dataset will allow us to confirm that the sentiment labels are clearly divided among these three categories.
+In the first step of this lab, you will load the dataset containing text samples labeled with three sentiment categories: positive, neutral, and negative. Using `pandas`, load the `Train.csv` and `Test.csv` datasets into DataFrames. Since this dataset has an extra class (neutral), it’s important to inspect the distribution of these three categories to understand how balanced the data is. Display a few rows of the dataset to confirm that the sentiment labels are clearly divided among these three categories.
 
 ---
 
 ## Iteration 2: Data Exploration
 
-In this step, we will explore the dataset to understand the sentiment distribution and other key features. First, we’ll visualize the distribution of the three sentiment labels—positive, neutral, and negative—to check for any class imbalance. We will also examine the length of the text samples and potentially plot word clouds for each class to get a sense of the common words. This exploration will help us determine whether any preprocessing or data balancing steps are needed before model training.
+In this step, you will explore the dataset to understand the sentiment distribution and other key features. First, visualize the distribution of the three sentiment labels—positive, neutral, and negative—to check for any class imbalance. Additionally, examine the length of the text samples and generate word clouds for each class to get a sense of the common words. This exploration will help you determine whether any preprocessing or data balancing steps are needed before model training.
 
 ---
 
 ## Iteration 3: Feature Preprocessing
 
-For the model to handle three-class classification, the text data needs to be preprocessed similarly to binary classification. We will use a pre-trained Hugging Face tokenizer (in this case, the `AutoTokenizer` for the **DistilBERT** model) to convert the raw text into tokenized sequences that the model can process. Since we're dealing with multiple classes, we will ensure that the labels in the dataset are properly encoded as three distinct categories. We will then pad and truncate the sequences to ensure a consistent input size for the model. Finally, we’ll split the data into training, validation, and test sets.
+For the model to handle three-class classification, the text data needs to be preprocessed. You will use a pre-trained Hugging Face tokenizer (in this case, the `AutoTokenizer` for the **DistilBERT** model) to convert the raw text into tokenized sequences that the model can process. Ensure that the labels in the dataset are properly encoded as three distinct categories. After tokenization, pad and truncate the sequences to ensure a consistent input size for the model. Finally, split the data into training, validation, and test sets.
 
 ---
 
 ## Iteration 4: Load a Pre-trained Model
 
-Next, we will load a pre-trained **DistilBERT** model capable of handling multi-class classification. Instead of binary classification, we will configure the model to output three classes (positive, neutral, and negative). We will use the `TFDistilBertForSequenceClassification` model, which is designed for text classification tasks. We’ll ensure the model is set up for a three-class output by specifying `num_labels=3`. We’ll also load the corresponding tokenizer for consistency in text processing.
+In this step, you will load a pre-trained **DistilBERT** model that can handle multi-class classification. Instead of binary classification, configure the model to output three classes (positive, neutral, and negative). Use the `TFDistilBertForSequenceClassification` model, which is designed for text classification tasks. Ensure the model is set up for three-class output by specifying `num_labels=3`. Also, load the corresponding tokenizer to ensure consistency in text processing.
 
 ---
 
 ## Iteration 5: Fine-tune the Pre-trained Model
 
-Once the model is ready, we will fine-tune it on our dataset to adjust it for three-class sentiment classification. We will use the TensorFlow/Keras training loop instead of Hugging Face’s `Trainer` API to fine-tune the model for a few epochs. During training, we will monitor key metrics such as loss and accuracy for all three classes. Fine-tuning allows the model to adapt its learned parameters to better suit the specific sentiment categories in our dataset.
+Once the model is ready, fine-tune it on your dataset to adapt it for three-class sentiment classification. Use the TensorFlow/Keras training loop to fine-tune the model for a few epochs. During training, monitor key metrics such as loss and accuracy for all three classes. Fine-tuning allows the model to adapt its learned parameters to better suit the specific sentiment categories in your dataset.
 
 ---
 
 ## Iteration 6: Model Evaluation
 
-After the fine-tuning process, we will evaluate the model’s performance on the test dataset. The model will generate predictions for positive, neutral, and negative sentiments, and we will compare these predictions against the actual labels. We will evaluate the model using metrics such as accuracy, precision, recall, and F1-score for each of the three classes. Additionally, a confusion matrix will help us visualize how well the model distinguishes between positive, neutral, and negative sentiments, highlighting any misclassifications between categories.
+After the fine-tuning process, evaluate the model’s performance on the test dataset. Generate predictions for positive, neutral, and negative sentiments, and compare these predictions against the actual labels. Evaluate the model using metrics such as accuracy, precision, recall, and F1-score for each of the three classes. Additionally, create a confusion matrix to visualize how well the model distinguishes between positive, neutral, and negative sentiments, highlighting any misclassifications between categories.
 
 ---
 
 ## Iteration 7: Save and Load the Model
 
-After achieving satisfactory performance, we will save the fine-tuned model and tokenizer. Using Hugging Face’s `save_pretrained` method, we will store the model so it can be loaded and used later without the need for retraining. We’ll also demonstrate how to load the saved model and tokenizer to make predictions on new text data, which could fall into any of the three categories. This ensures that the model can be used for future sentiment analysis tasks.
+After achieving satisfactory performance, save the fine-tuned model and tokenizer. Use Hugging Face’s `save_pretrained` method to store the model so it can be loaded and used later without the need for retraining. Demonstrate how to load the saved model and tokenizer to make predictions on new text data, which could fall into any of the three categories. This ensures that the model can be used for future sentiment analysis tasks.
 
 ---
 
 ## Iteration 8: Final Evaluation and Conclusion
 
-Finally, we will summarize the results of the lab and evaluate the model’s overall performance. By analyzing the confusion matrices, precision, recall, and F1-scores for positive, neutral, and negative classes, we will draw conclusions on how effectively the model handles multi-class sentiment classification. This step will also include a discussion on the challenges and insights gained from fine-tuning a pre-trained model for a task involving three sentiment categories.
+In this final step, summarize the results of the lab and evaluate the model’s overall performance. Analyze the confusion matrices, precision, recall, and F1-scores for positive, neutral, and negative classes. Draw conclusions on how effectively the model handles multi-class sentiment classification. Discuss the challenges and insights gained from fine-tuning a pre-trained model for a task involving three sentiment categories.
+
+---
+
+## Bonus: Handling Class Imbalance
+
+In this bonus section, you will address the class imbalance in the dataset. The dataset contains significantly more positive examples than negative or neutral, which can result in the model being biased toward predicting the majority class.
+
+### Option 1: Class Weights
+You can assign different weights to each class during training to give more importance to the minority classes. TensorFlow’s `class_weight` parameter allows you to distribute weights for each class, similar to using a `Sampler` in PyTorch.
+
+### Option 2: Data Augmentation
+Alternatively, you can augment the minority class data by generating new text samples. One approach to this is by using synonym replacement, where certain words in the minority class text samples are replaced with their synonyms to create new variations of the data.
 
 ---
 
