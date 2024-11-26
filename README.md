@@ -73,7 +73,7 @@ Leverage the pre-trained **MobileNetV2** model for transfer learning. Configure 
 2. Freeze the base model layers to retain the pre-trained features.
 3. Add custom classification layers:
     - A global average pooling layer.
-    - A dense layer with ReLU activation.
+    - A dense layer with ReLU activation and 1024 neurons.
     - An output layer with softmax activation for five classes.
 4. Compile the model with a categorical cross-entropy loss and an appropriate optimizer.
 
@@ -88,13 +88,14 @@ Train and fine-tune the model to adapt the pre-trained features to the flower da
 1. Train the custom classification layers while keeping the base model frozen.
     - Use a moderate learning rate.
     - Monitor loss and accuracy on both training and validation datasets.
-2. Unfreeze the base model layers for fine-tuning.
-    - Use a smaller learning rate to prevent overfitting.
-    - Fine-tune the entire model for a few additional epochs.
-3. Visualize the training process:
+2. Visualize the training process:
     - Plot the training and validation accuracy.
     - Plot the training and validation loss.
 
+Optional:
+    - Unfreeze the base model layers for fine-tuning.
+    - Use a smaller learning rate to prevent overfitting.
+    - Fine-tune the entire model for a few additional epochs.
 ---
 
 ## Iteration 5: Model Evaluation
@@ -106,7 +107,6 @@ Evaluate the model’s performance on the validation dataset using various metri
 1. Compute overall accuracy on the validation set.
 2. Generate a confusion matrix to visualize class-wise performance.
 3. Calculate precision, recall, and F1-score for each class.
-4. Identify any misclassifications and analyze potential causes.
 
 ---
 
