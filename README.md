@@ -75,7 +75,7 @@ Leverage the pre-trained **MobileNetV2** model for transfer learning. Configure 
     - A global average pooling layer.
     - A dense layer with ReLU activation and 1024 neurons.
     - An output layer with softmax activation for five classes.
-4. Compile the model with a categorical cross-entropy loss and an appropriate optimizer.
+4. Compile the model with a categorical cross-entropy loss and an appropriate optimizer, use a moderate learning rate.
 
 ---
 
@@ -85,17 +85,14 @@ Leverage the pre-trained **MobileNetV2** model for transfer learning. Configure 
 Train and fine-tune the model to adapt the pre-trained features to the flower dataset.
 
 ### Tasks
-1. Train the custom classification layers while keeping the base model frozen.
-    - Use a moderate learning rate.
+1. Train the custom classification layers while keeping the base model frozen:
+    - Set **`epochs`** to `5` for a short training duration.
+    - Set **`steps_per_epoch`** to `50` to adjust for the dataset size.
+    - Set **`validation_steps`** to `10` to evaluate on a subset of the validation data.
     - Monitor loss and accuracy on both training and validation datasets.
 2. Visualize the training process:
     - Plot the training and validation accuracy.
     - Plot the training and validation loss.
-
-Optional:
-    - Unfreeze the base model layers for fine-tuning.
-    - Use a smaller learning rate to prevent overfitting.
-    - Fine-tune the entire model for a few additional epochs.
 ---
 
 ## Iteration 5: Model Evaluation
