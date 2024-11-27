@@ -125,6 +125,40 @@ Once we have our model saved, we will proceed to make predictions with it. For t
 
 ---
 
+### Bonus Iteration: Sentiment Analysis with Transfer Learning
+
+In this bonus task, students will explore how transfer learning can be applied to text data for sentiment analysis. Using a pre-trained text model, such as **DistilBERT** from Hugging Face, the goal is to fine-tune the model on a sentiment analysis dataset to classify text as positive, neutral, or negative.
+
+---
+
+#### Tasks:
+
+1. **Dataset Preparation**:
+   - Download a sentiment analysis dataset (e.g., IMDb, SST-2, or a custom dataset).
+   - Preprocess the text data:
+     - Tokenize the text using the tokenizer associated with the pre-trained model.
+     - Convert the tokens into the format required by the model (e.g., attention masks, input IDs).
+
+2. **Load Pre-trained Model**:
+   - Load the pre-trained **DistilBERT** model with a classification head (e.g., `BertForSequenceClassification`).
+   - Adapt the output layer to match the number of sentiment classes (e.g., 3 for positive, neutral, and negative).
+
+3. **Fine-tuning**:
+   - Freeze the base model initially and train only the classification head for a few epochs.
+   - Unfreeze the base model and fine-tune all layers for better adaptation.
+   - Use a categorical cross-entropy loss and an appropriate optimizer (e.g., AdamW).
+
+4. **Evaluation**:
+   - Evaluate the fine-tuned model on the validation/test dataset.
+   - Compute metrics such as accuracy, precision, recall, and F1-score.
+   - Generate a classification report and confusion matrix.
+
+5. **Custom Predictions**:
+   - Use the fine-tuned model to predict sentiments for custom text inputs.
+   - Display the text along with its predicted sentiment and confidence score.
+
+---
+
 ## Submission
 Once you have completed your analysis and visualizations, push your Jupyter notebook to your forked GitHub repository. Ensure that your final submission includes narratives explaining your visualizations and insights.
 
