@@ -34,7 +34,6 @@ In this lab, we will perform image classification using the MobileNetV2 model, a
 
 ## Iteration 1: Dataset Loading
 
-### Objective
 In this step, we will load the **Flowers Dataset**, a collection of flower images provided by TensorFlow. The dataset contains five categories: daisies, dandelions, roses, sunflowers, and tulips. The goal is to extract the dataset, load it into TensorFlow, and split it into training and validation subsets.
 
 ### Tasks
@@ -47,7 +46,6 @@ In this step, we will load the **Flowers Dataset**, a collection of flower image
 
 ## Iteration 2: Data Preprocessing
 
-### Objective
 Preprocess the images to make them suitable for the MobileNetV2 model. This includes normalizing pixel values and applying data augmentation to enhance model generalization.
 
 ### Tasks
@@ -65,7 +63,6 @@ Preprocess the images to make them suitable for the MobileNetV2 model. This incl
 
 ## Iteration 3: Load a Pre-trained Model
 
-### Objective
 Leverage the pre-trained **MobileNetV2** model for transfer learning. Configure the model to adapt it for the five flower categories.
 
 ### Tasks
@@ -81,7 +78,6 @@ Leverage the pre-trained **MobileNetV2** model for transfer learning. Configure 
 
 ## Iteration 4: Fine-tune the Pre-trained Model
 
-### Objective
 Train and fine-tune the model to adapt the pre-trained features to the flower dataset.
 
 ### Tasks
@@ -97,7 +93,6 @@ Train and fine-tune the model to adapt the pre-trained features to the flower da
 
 ## Iteration 5: Model Evaluation
 
-### Objective
 Evaluate the model’s performance on the validation dataset using various metrics and visualizations.
 
 ### Tasks
@@ -109,7 +104,6 @@ Evaluate the model’s performance on the validation dataset using various metri
 
 ## Iteration 6: Save and Load the Model
 
-### Objective
 Save the fine-tuned model to ensure it can be reused without retraining. Demonstrate how to reload the model for predictions.
 
 ### Tasks
@@ -121,11 +115,10 @@ Save the fine-tuned model to ensure it can be reused without retraining. Demonst
 
 ## Iteration 7: Custom Predictions
 
-### Objective
-Test the model on custom images to validate its generalization on unseen data.
+Once we have our model saved, we will proceed to make predictions with it. For this, in the test_images folder, we have a series of images that we will provide to the model to evaluate its performance with unseen images. 
 
 ### Tasks
-1. Provide a set of custom flower images.
+1. Use the flower images provided in the test_images folder.
 2. Preprocess the images to match the input size and format of the model.
 3. Use the model to predict the class for each image.
 4. Display the images with their predicted labels and confidence scores.
