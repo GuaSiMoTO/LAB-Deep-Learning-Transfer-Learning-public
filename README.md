@@ -125,11 +125,9 @@ Once we have our model saved, we will proceed to make predictions with it. For t
 
 ---
 
-### Bonus Iteration: Sentiment Analysis with Transfer Learning
+## Bonus Iteration: Sentiment Analysis with Transfer Learning
 
 In this bonus task, students will explore how transfer learning can be applied to text data for sentiment analysis. Using a pre-trained text model, such as **DistilBERT** from Hugging Face, the goal is to fine-tune the model on a sentiment analysis dataset to classify text as positive, neutral, or negative.
-
----
 
 #### Tasks:
 
