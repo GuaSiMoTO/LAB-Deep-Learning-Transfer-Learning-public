@@ -169,9 +169,8 @@ Then create a Pull Request!!
 
 ## Additional Resources
 
-- [ ]()
-- [ ]()
-- [ ]()
-- [ ]().
-- [ ]().
+- [MobileNetV2 Tensorflow Documentation](https://www.tensorflow.org/api_docs/python/tf/keras/applications/MobileNetV2)
+- [MobileNetV2 Keras Documentation](https://keras.io/api/applications/mobilenet/)
+- [MobileNetV2 Hugging Face Documentation](https://huggingface.co/docs/transformers/en/model_doc/mobilenet_v2).
+- [DistilBERT Documentation](https://huggingface.co/docs/transformers/en/model_doc/distilbert).
 
