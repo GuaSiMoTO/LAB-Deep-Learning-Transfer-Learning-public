@@ -1,2 +1,5 @@
 .ipynb_checkpoints
 .virtual_environments
+flower_photos_extracted
+flower_photos_split
+flower_photos.tgz
